@@ -53,8 +53,23 @@ public class AmazonStepDefinition {
 
     @And("sonuclarin iphone icerdigini test eder")
     public void sonuclarinIphoneIcerdiginiTestEder() {
-        String arananKelime="iphone";
-        String actualAramaSonucStr= amazonPage.aramaSonucElementi.getText();
+        String arananKelime = "iphone";
+        String actualAramaSonucStr = amazonPage.aramaSonucElementi.getText();
         Assert.assertTrue(actualAramaSonucStr.contains(arananKelime));
+
+
     }
-}
+        @Given("kullanici {string} icin arama yapar")
+        public void kullanici_icin_arama_yapar(String istenenKelime) {
+            amazonPage.aramaKutusu.sendKeys(istenenKelime+ Keys.ENTER);
+
+        }
+        @Given("sonuclarin {string} icerdigini test eder")
+        public void sonuclarin_icerdigini_test_eder(String istenenKelime) {
+            String arananKelime = "istenenKelime";
+            String actualAramaSonucStr = amazonPage.aramaSonucElementi.getText();
+
+            Assert.assertTrue(actualAramaSonucStr.contains(arananKelime));
+
+        }
+    }

@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags = "@Background", // iki tag'ı aynı anda çalıştırmak isterseniz "@gp1 or @gp2"
-        dryRun = false
+        tags = "@PracticeTC07", // iki tag'ı aynı anda çalıştırmak isterseniz "@gp1 or @gp2"
+        dryRun = true
 
 )
 public class Runner {
